@@ -52,7 +52,8 @@ public class TestLightsAPI extends TestBase {
     }
 
 
-    @Test @Ignore("not ready yet")
+    @Test
+//    @Ignore("not ready yet")
     public void testLightsAPI_1_5() throws Exception {
         String url = baseURL + "newdeveloper/lights/2";
 
