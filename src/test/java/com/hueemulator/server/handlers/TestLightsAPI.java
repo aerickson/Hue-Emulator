@@ -70,32 +70,28 @@ public class TestLightsAPI extends TestBase {
         System.out.println("Testing Lights API: 1.6. Set light state   (http://developers.meethue.com/1_lightsapi.html)" );
         String url = baseURL + "newdeveloper/lights/2/state";
 
-        String jsonToPut="{\"hue\": 50000 }";  
-
+        // testing something
+        String jsonToPut="{\"hue\": 50000 }";
         String expected="[{\"success\":{\"/lights/2/state/hue\":50000}}]";  // {"success":{"/lights/1/state/hue":50000}}
-
         String response= httpTester.doPutOrPost(url, jsonToPut, "PUT");
         assertTrue(TestUtils.jsonsArrayEqual(expected, response));   
 
+        // testing something else
         jsonToPut =  "{\"hue\": 20000,\"on\": false,\"bri\": 220}";
         expected = "[{\"success\":{\"/lights/2/state/bri\":220}},{\"success\":{\"/lights/2/state/hue\":20000}},{\"success\":{\"/lights/2/state/on\":false}}]";
         response= httpTester.doPutOrPost(url, jsonToPut, "PUT");
-
         assertTrue(TestUtils.jsonsArrayEqual(expected, response));   
 
         // Try to Modify the Hue of a light turned off.
         jsonToPut = "{\"hue\": 4444}";
-
         response= httpTester.doPutOrPost(url, jsonToPut, "PUT");
         expected = "[{\"error\":{\"address\":\"/lights/2/state/hue\",\"description\":\"parameter, hue, is not modifiable. Device is set to off.\",\"type\":201}}]";
-
         assertTrue(TestUtils.jsonsArrayEqual(expected, response));   
         
         // Turn the Light Back on.
         jsonToPut = "{\"on\": true}";
         expected = "[{\"success\":{\"/lights/2/state/on\":true}}]";
         response= httpTester.doPutOrPost(url, jsonToPut, "PUT");
-
         assertTrue(TestUtils.jsonsArrayEqual(expected, response));   
         
         // Test setting Hue to an Invalid Value.
