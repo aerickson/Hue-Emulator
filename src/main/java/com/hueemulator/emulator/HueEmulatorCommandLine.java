@@ -1,14 +1,12 @@
 package com.hueemulator.emulator;
 
-import com.hueemulator.emulator.Constants;
-
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
 @Command(name = "java -jar hue_emulator.jar", mixinStandardHelpOptions = true, version = "0.9")
-public class CommandLine implements Callable<Void>{
+public class HueEmulatorCommandLine implements Callable<Void>{
 
     @Parameters(arity = "0..1", paramLabel = "CONFIG_FILE", description = "Config file to use.")
     private static String configFile = null;
@@ -23,7 +21,7 @@ public class CommandLine implements Callable<Void>{
     }
 
     public static void main(String[] args) {
-        picocli.CommandLine.call(new CommandLine(), args);
+        picocli.CommandLine.call(new HueEmulatorCommandLine(), args);
     }
 
 }
