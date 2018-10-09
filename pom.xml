@@ -11,7 +11,7 @@
 
     <groupId>eu.diversit.hue</groupId>
     <artifactId>hue-emulator</artifactId>
-    <version>0.8-SNAPSHOT</version>
+    <version>0.8.1-AJE-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
