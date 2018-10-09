@@ -10,4 +10,6 @@ public class Constants {
    
    public static final String LIGHT_FRAME_LARGE   = "LARGE";
    public static final String LIGHT_FRAME_SMALL   = "SMALL";
+
+   public static final int DEFAULT_PORT           = 8000;
 }

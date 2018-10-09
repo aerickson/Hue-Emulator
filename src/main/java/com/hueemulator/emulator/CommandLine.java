@@ -1,5 +1,7 @@
 package com.hueemulator.emulator;
 
+import com.hueemulator.emulator.Constants;
+
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Command;
@@ -12,7 +14,7 @@ public class CommandLine implements Callable<Void>{
     private static String configFile = null;
 
     @Option(names = { "-p", "--port" }, paramLabel = "PORT", description = "Port to default to.")
-    private static int portNumber = 8000;
+    private static int portNumber = Constants.DEFAULT_PORT;
 
     @Override
     public Void call() {

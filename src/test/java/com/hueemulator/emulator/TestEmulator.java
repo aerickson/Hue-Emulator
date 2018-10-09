@@ -60,7 +60,7 @@ public class TestEmulator {
 
         model = new Model();
 
-        View view = headless ? null : new View(8000);
+        View view = headless ? null : new View(DEFAULT_PORT_NUMBER);
 
         controller = new Controller(model, view, null);
 
