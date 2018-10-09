@@ -35,12 +35,10 @@ public class HueMenuBar extends JMenuBar {
     private Controller controller;
     private LightsFrame lightFrameLarge;
     private LightsFrame lightFrameSmall;
-    
- public HueMenuBar() { 
-               
+
+ public HueMenuBar(int port_number) {
         //Create the menu bar.
         menuBar = new JMenuBar();
-
         
         //Build the File Menu.
         fileMenu = new JMenu("File");
@@ -209,7 +207,7 @@ public class HueMenuBar extends JMenuBar {
         JLabel portLabel = new JLabel("port:  ");
         menuBar.add(portLabel);
        
-        port = new JTextField("8000", 4);
+        port = new JTextField(Integer.toString(port_number), 4);
         port.setColumns(4);
         port.setMaximumSize(new Dimension(50,18));
         menuBar.add(port);              

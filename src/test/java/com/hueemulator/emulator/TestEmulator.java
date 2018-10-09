@@ -60,7 +60,7 @@ public class TestEmulator {
 
         model = new Model();
 
-        View view = headless ? null : new View();
+        View view = headless ? null : new View(8000);
 
         controller = new Controller(model, view, null);
 

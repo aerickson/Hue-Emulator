@@ -23,7 +23,7 @@ public class View {
     private JScrollPane consoleScrollPane;
 
 
-    public View(){
+    public View(int port){
         JFrame frame = new JFrame("Hue Emulator");
 
         console = new JEditorPane();
@@ -48,7 +48,7 @@ public class View {
         toolbar.add(button);
         toolbar.setBorderPainted(false);
 
-        menuBar = new HueMenuBar();   
+        menuBar = new HueMenuBar(port);
 
         Font font = new Font("Courier New", Font.PLAIN, 14);
         String bodyRule = "body { color: #BBBBBB; font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";

@@ -4,11 +4,11 @@ import com.hueemulator.gui.View;
 
 public class HueEmulator {
 
-    public HueEmulator(String fileName) {
+    public HueEmulator(String fileName, int portNumber) {
         Model model = new Model();
 
         //  Set Up the View (A JFrame, MenuBar and Console).
-        View view = new View();
+        View view = new View(portNumber);
 
         // Bind the Model and View
         Controller controller = new Controller(model,view,fileName);
