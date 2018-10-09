@@ -71,6 +71,8 @@
                         <manifest>
                             <mainClass>com.hueemulator.emulator.HueEmulatorCommandLine</mainClass>
                             <addClasspath>true</addClasspath>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                     </archive>
 
